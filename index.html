@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Rank Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="settings-panel" class="desktop-only">
+        <button id="settings-close-btn" class="glass-btn">×</button>
+        <h3 data-key="settingsTitle">設定</h3>
+        <div class="setting-item">
+            <label data-key="languageLabel">言語</label>
+            <div class="language-selector">
+                <button class="lang-btn" data-lang="ja"><img src="japanese.png" alt="Japanese"></button>
+                <button class="lang-btn" data-lang="en"><img src="english.png" alt="English"></button>
+            </div>
+        </div>
+    </div>
+    <nav id="category-sidebar" class="desktop-only">
+        <h3 data-key="categoriesTitle">Categories</h3>
+        <ul>
+            <li><a href="#" class="category-link active" data-category="ranks" data-key="categoryRanks">Ranks</a></li>
+            <li><a href="#" class="category-link" data-category="colors" data-key="categoryColors">Colors</a></li>
+            <li><a href="#" class="category-link" data-category="badges" data-key="categoryBadges">Badges</a></li>
+            <li><a href="#" class="category-link" data-category="booster" data-key="categoryXPBooster">XP Booster</a></li>
+            <li><a href="#" class="category-link" data-category="serverbooster" data-key="categoryServerBooster">Server Booster</a></li>
+        </ul>
+    </nav>
+    <nav id="unified-sidebar" class="mobile-only">
+        <div class="sidebar-nav">
+            <button class="sidebar-nav-btn active" data-tab="categories"><i class="fas fa-list"></i><span class="nav-text" data-key="categoriesTitle"></span></button>
+            <button class="sidebar-nav-btn" data-tab="cart"><i class="fas fa-shopping-cart"></i><span class="nav-text" data-key="cartTitle"></span></button>
+            <button class="sidebar-nav-btn" data-tab="settings"><i class="fas fa-cog"></i><span class="nav-text" data-key="settingsTitle"></span></button>
+        </div>
+        <div class="sidebar-content-wrapper">
+            <div id="sidebar-tab-categories" class="sidebar-tab-content active">
+                 <ul>
+                    <li><a href="#" class="category-link active" data-category="ranks" data-key="categoryRanks">Ranks</a></li>
+                    <li><a href="#" class="category-link" data-category="colors" data-key="categoryColors">Colors</a></li>
+                    <li><a href="#" class="category-link" data-category="badges" data-key="categoryBadges">Badges</a></li>
+                    <li><a href="#" class="category-link" data-category="booster" data-key="categoryXPBooster">XP Booster</a></li>
+                    <li><a href="#" class="category-link" data-category="serverbooster" data-key="categoryServerBooster">Server Booster</a></li>
+                </ul>
+            </div>
+            <div id="sidebar-tab-cart" class="sidebar-tab-content">
+                <div class="cart-items-container"></div>
+                <div class="cart-footer">
+                    <div class="cart-total-container" style="display: flex; justify-content: space-between;"><span data-key="totalLabel">合計:</span><span>$0.00</span></div>
+                    <a href="https://your-tebex-store.com" target="_blank" class="checkout-btn glass-btn" data-key="checkoutButton">チェックアウト</a>
+                </div>
+            </div>
+            <div id="sidebar-tab-settings" class="sidebar-tab-content">
+                <h3 data-key="settingsTitle"></h3>
+                <div class="setting-item">
+                    <label data-key="languageLabel">言語</label>
+                    <div class="language-selector">
+                        <button class="lang-btn" data-lang="ja"><img src="japanese.png" alt="Japanese"></button>
+                        <button class="lang-btn" data-lang="en"><img src="english.png" alt="English"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="login-overlay"><div id="login-modal"><button id="login-close-btn" class="glass-btn">×</button><h3 data-key="loginTitle">Minecraft IDでログイン</h3><input type="text" id="minecraft-id-input" data-key-placeholder="loginPlaceholder"><div id="login-action-area" style="min-height: 50px;"><button id="login-submit-btn" class="glass-btn" data-key="loginButton">ログイン</button><div id="login-spinner" style="display: none;"></div></div><p id="login-message" style="font-size: 0.8em; opacity: 0.7; margin-top: 15px;" data-key="loginNotice"></p></div></div>
+
+    <header class="container">
+        <div class="header-left">
+            <button id="menu-toggle" class="glass-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span id="cart-item-count-mobile" class="mobile-only">0</span>
+            </button>
+            <h2 data-key="storeTitle">Minecraft Rank Store</h2>
+        </div>
+        <div class="header-controls">
+            <div id="user-info" style="display: none;"><img id="player-head" src="" alt="Player Head"><span id="player-name"></span></div>
+            <button id="login-btn" class="glass-btn" data-key="loginButton">ログイン</button>
+            <button id="logout-btn" class="glass-btn" style="display: none;" data-key="logoutButton">ログアウト</button>
+            <button id="cart-toggle-btn" class="glass-btn desktop-only">🛒 (<span id="cart-item-count-desktop">0</span>)</button>
+            <button id="settings-toggle-btn" class="glass-btn desktop-only"><i id="settings-icon" class="fa-solid fa-gear"></i></button>
+        </div>
+    </header>
+
+    <main class="container" id="main-content">
+         <div id="ranks-content" class="product-list category-content active">
+            <div class="product-card"><img src="plus.png" alt="Plus Rank" class="rank-image"><p class="price">$3.99</p><button class="add-btn glass-btn" data-name="PLUS Rank" data-price="3.99" data-category="ranks" disabled data-key="addToCart"></button><div class="rank-features"><ul data-key="plusFeatures"></ul></div></div>
+            <div class="product-card"><img src="super.png" alt="Super Rank" class="rank-image"><p class="price">$7.99</p><button class="add-btn glass-btn" data-name="SUPER Rank" data-price="7.99" data-category="ranks" disabled data-key="addToCart"></button><div class="rank-features"><ul data-key="superFeatures"></ul></div></div>
+            <div class="product-card"><img src="deluxe.png" alt="Deluxe Rank" class="rank-image"><p class="price">$12.99</p><button class="add-btn glass-btn" data-name="DELUXE Rank" data-price="12.99" data-category="ranks" disabled data-key="addToCart"></button><div class="rank-features"><ul data-key="deluxeFeatures"></ul></div></div>
+            <div class="product-card"><img src="premium.png" alt="Premium Rank" class="rank-image"><p class="price">$17.99</p><button class="add-btn glass-btn" data-name="PREMIUM Rank" data-price="17.99" data-category="ranks" disabled data-key="addToCart"></button><div class="rank-features"><ul data-key="premiumFeatures"></ul></div></div>
+            <div class="product-card"><img src="ultimate.png" alt="Ultimate Rank" class="rank-image"><p class="price">$9.99<span class="subscription-label" data-key="monthlySub"></span></p><button class="add-btn glass-btn" data-name="ULTIMATE Rank (Subscription)" data-price="9.99" data-category="ranks" disabled data-key="addToCart"></button><div class="rank-features"><ul data-key="ultimateFeatures"></ul></div></div>
+        </div>
+        <div id="colors-content" class="product-list category-content"></div>
+        <div id="badges-content" class="product-list category-content"></div>
+        <div id="booster-content" class="product-list category-content"><div class="product-card"><img src="boost.png" alt="XP Booster" class="rank-image"><p class="price">$10.99<span class="subscription-label" data-key="monthlySub"></span></p><button class="add-btn glass-btn" data-name="XP Booster (30 Days)" data-price="10.99" data-category="booster" disabled data-key="addToCart"></button><div class="rank-features"><ul data-key="boosterFeatures"></ul></div></div></div>
+        <div id="serverbooster-content" class="product-list category-content"><div class="product-card"><img src="serverbooster.png" alt="Server Booster" class="rank-image"><h3>Server Booster</h3><a href="https://discord.gg/NDd7cyKkYq" target="_blank" class="glass-btn discord-btn"><i class="fab fa-discord"></i> <span data-key="joinDiscord"></span></a><div class="rank-features"><ul data-key="serverBoosterFeatures"></ul></div></div></div>
+    </main>
+
+    <div id="side-menu" class="desktop-only">
+        <div class="cart-header"><span data-key="cartTitle"></span><button id="close-cart-btn">×</button></div>
+        <div class="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total-container" style="display: flex; justify-content: space-between;"><span data-key="totalLabel"></span><span>$0.00</span></div>
+            <a href="https://your-tebex-store.com" class="checkout-btn glass-btn" data-key="checkoutButton"></a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
