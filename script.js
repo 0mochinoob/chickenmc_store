@@ -277,18 +277,24 @@ document.addEventListener('DOMContentLoaded', () => {
         const cartItems = document.querySelectorAll('.cart-item');
         if (cartItems.length === 0) return;
 
+        // すべてのアイテムにアニメーションを適用
         cartItems.forEach((item, index) => {
             item.style.transitionDelay = `${index * 50}ms`;
             item.classList.add('removing');
         });
 
         const lastItem = cartItems[cartItems.length - 1];
+        
+        // 最後のアイテムのアニメーションが完了したら、
+        // UIを更新して「カートは空です」メッセージを表示
         lastItem.addEventListener('animationend', () => {
-            cart = [];
-            updateCartUI();
-            saveState();
-            setTimeout(updateCartUI, 100); 
+            updateCartUI(); 
         }, { once: true });
+        
+        // ★修正点: アニメーションの完了を待たずに、データを即座にクリアして保存
+        // これにより、アニメーション中にページを離れてもカートは空になる
+        cart = [];
+        saveState();
     };
 
     const handleLogin = async () => {
