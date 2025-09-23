@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+Document.addEventListener('DOMContentLoaded', () => {
     const translations = {
         ja: {
             settingsTitle: "設定", languageLabel: "言語", storeTitle: "CHICKENMC STORE", loginButton: "ログイン", logoutButton: "ログアウト", loginTitle: "Minecraft IDでログイン", loginPlaceholder: "あなたのIDを入力...", loginNotice: "※これはデモです。パスワードは不要です。", addToCart: "カートに入れる", cartTitle: "ショッピングカート", totalLabel: "合計:", checkoutButton: "チェックアウト", monthlySub: "/月", categoriesTitle: "カテゴリー", categoryRanks: "ランク", categoryStandardColors: "スタンダードカラー", categoryGradationColors: "グラデーションカラー", categoryBadges: "バッジ", categoryBoost: "ブースト", categoryServerBooster: "サーバーブースター", joinDiscord: "Discordに参加", clearCartButton: "すべて削除",
@@ -24,7 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
             boosterFeatures: "<li>Boosts the entire server's XP gain for 30 days.</li>",
             serverBoosterFeatures: "<li>This is a type of rank, but it can only be purchased via Discord.</li><li>Please check our Discord server for details.</li>",
             loginErrorNotFound: (id) => `The ID "${id}" could not be found.`, loginErrorWrongCase: (id, correctId) => `The name "${id}" is not in use. The correct name is "${correctId}".`, loginEmptyError: "Please enter a Minecraft ID", loginInProgress: "Verifying account...", logoutSuccess: (user) => `Logged out from ${user}`, loginRequired: "Please log in to purchase", cartAddSuccess: (name) => `Added ${name} to cart`, cartItemExists: (name) => `${name} is already in the cart.`, cartRankExists: "You can only purchase one rank at a time.", cartBoosterExists: "You can only purchase one booster at a time.", checkoutSuccess: "Thank you for your purchase!", cartEmpty: "Your cart is empty", cartEmptyMessage: '<p style="text-align: center; opacity: 0.7; margin-top: 40px;">The cart is empty</p>',
-            "badgeKarasuBadge": "Karasu Badge", "badgeHiyokoBadge": "Hiyoko Badge", "badgeAhiruBadge": "Ahiru Badge", "badgeChickenBadge": "Chicken Badge", "badgeHinotoriBadge": "Hinotori Badge", "badgeRaichoBadge": "Raicho Badge"
+            "badgeKarasuBadge": "Crow",
+            "badgeHiyokoBadge": "Chick",
+            "badgeAhiruBadge": "Duck",
+            "badgeChickenBadge": "Chicken",
+            "badgeHinotoriBadge": "Fire Bird",
+            "badgeRaichoBadge": "Thunder Bird"
         }
     };
 
@@ -85,12 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
             { id: 'Mojito', defaultName: 'Mojito', start: '#98FF98', end: '#fff2a8' }, { id: 'Royal', defaultName: 'Royal', start: '#540192', end: '#7b97f5' }
         ],
         badges: [
-            { id: 'KarasuBadge', defaultName: 'Karasu Badge', img: 'karasu.png' },
-            { id: 'HiyokoBadge', defaultName: 'Hiyoko Badge', img: 'hiyoko.png' },
-            { id: 'AhiruBadge', defaultName: 'Ahiru Badge', img: 'ahiru.png' },
-            { id: 'ChickenBadge', defaultName: 'Chicken Badge', img: 'chicken.png' },
-            { id: 'HinotoriBadge', defaultName: 'Hinotori Badge', img: 'hinotori.png' },
-            { id: 'RaichoBadge', defaultName: 'Raicho Badge', img: 'raicho.png' }
+            { id: 'KarasuBadge', defaultName: 'Crow', img: 'karasu.png' },
+            { id: 'HiyokoBadge', defaultName: 'Chick', img: 'hiyoko.png' },
+            { id: 'AhiruBadge', defaultName: 'Duck', img: 'ahiru.png' },
+            { id: 'ChickenBadge', defaultName: 'Chicken', img: 'chicken.png' },
+            { id: 'HinotoriBadge', defaultName: 'Fire Bird', img: 'hinotori.png' },
+            { id: 'RaichoBadge', defaultName: 'Thunder Bird', img: 'raicho.png' }
         ]
     };
 
