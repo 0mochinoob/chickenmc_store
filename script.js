@@ -1,4 +1,4 @@
-Document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const translations = {
         ja: {
             settingsTitle: "設定", languageLabel: "言語", storeTitle: "CHICKENMC STORE", loginButton: "ログイン", logoutButton: "ログアウト", loginTitle: "Minecraft IDでログイン", loginPlaceholder: "あなたのIDを入力...", loginNotice: "※これはデモです。パスワードは不要です。", addToCart: "カートに入れる", cartTitle: "ショッピングカート", totalLabel: "合計:", checkoutButton: "チェックアウト", monthlySub: "/月", categoriesTitle: "カテゴリー", categoryRanks: "ランク", categoryStandardColors: "スタンダードカラー", categoryGradationColors: "グラデーションカラー", categoryBadges: "バッジ", categoryBoost: "ブースト", categoryServerBooster: "サーバーブースター", joinDiscord: "Discordに参加", clearCartButton: "すべて削除",
