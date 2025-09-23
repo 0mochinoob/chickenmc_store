@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const translations = {
         ja: {
-            settingsTitle: "設定", languageLabel: "言語", storeTitle: "Minecraft Rank Store", loginButton: "ログイン", logoutButton: "ログアウト", loginTitle: "Minecraft IDでログイン", loginPlaceholder: "あなたのIDを入力...", loginNotice: "※これはデモです。パスワードは不要です。", addToCart: "カートに入れる", cartTitle: "ショッピングカート", totalLabel: "合計:", checkoutButton: "チェックアウト", monthlySub: "/月", categoriesTitle: "カテゴリー", categoryRanks: "ランク", categoryStandardColors: "スタンダードカラー", categoryGradationColors: "グラデーションカラー", categoryBadges: "バッジ", categoryBoost: "ブースト", categoryServerBooster: "サーバーブースター", joinDiscord: "Discordに参加", clearCartButton: "すべて削除",
+            settingsTitle: "設定", languageLabel: "言語", storeTitle: "CHICKENMC STORE", loginButton: "ログイン", logoutButton: "ログアウト", loginTitle: "Minecraft IDでログイン", loginPlaceholder: "あなたのIDを入力...", loginNotice: "※これはデモです。パスワードは不要です。", addToCart: "カートに入れる", cartTitle: "ショッピングカート", totalLabel: "合計:", checkoutButton: "チェックアウト", monthlySub: "/月", categoriesTitle: "カテゴリー", categoryRanks: "ランク", categoryStandardColors: "スタンダードカラー", categoryGradationColors: "グラデーションカラー", categoryBadges: "バッジ", categoryBoost: "ブースト", categoryServerBooster: "サーバーブースター", joinDiscord: "Discordに参加", clearCartButton: "すべて削除",
             plusFeatures: "<li>特別なチャットプレフィックス</li><li>/fly コマンドへのアクセス権</li>",
             superFeatures: "<li>PLUSランクの全特典</li><li>ペット機能の利用</li><li>限定ワールドへのアクセス</li>",
             deluxeFeatures: "<li>SUPERランクの全特典</li><li>ニックネーム変更機能</li><li>パーティクルエフェクト</li>",
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "badgeSkullBadge": "スカルバッジ", "badgeCreeperBadge": "クリーパーバッジ", "badgeDiamondSwordBadge": "ダイヤ剣バッジ", "badgePickaxeBadge": "ピッケルバッジ", "badgeEnderPearlBadge": "エンパ―バッジ", "badgeGoldenAppleBadge": "金リンゴバッジ", "badgeTNTBadge": "TNTバッジ", "badgeHeartBadge": "ハートバッジ"
         },
         en: {
-            settingsTitle: "Settings", languageLabel: "Language", storeTitle: "Minecraft Rank Store", loginButton: "Login", logoutButton: "Logout", loginTitle: "Login with Minecraft ID", loginPlaceholder: "Enter your ID...", loginNotice: "*This is a demo. No password is required.", addToCart: "Add to Cart", cartTitle: "Shopping Cart", totalLabel: "Total:", checkoutButton: "Checkout", monthlySub: "/month", categoriesTitle: "Categories", categoryRanks: "Ranks", categoryStandardColors: "Standard Colors", categoryGradationColors: "Gradation Colors", categoryBadges: "Badges", categoryBoost: "Boost", categoryServerBooster: "Server Booster", joinDiscord: "Join Discord", clearCartButton: "Clear All",
+            settingsTitle: "Settings", languageLabel: "Language", storeTitle: "CHICKENMC STORE", loginButton: "Login", logoutButton: "Logout", loginTitle: "Login with Minecraft ID", loginPlaceholder: "Enter your ID...", loginNotice: "*This is a demo. No password is required.", addToCart: "Add to Cart", cartTitle: "Shopping Cart", totalLabel: "Total:", checkoutButton: "Checkout", monthlySub: "/month", categoriesTitle: "Categories", categoryRanks: "Ranks", categoryStandardColors: "Standard Colors", categoryGradationColors: "Gradation Colors", categoryBadges: "Badges", categoryBoost: "Boost", categoryServerBooster: "Server Booster", joinDiscord: "Join Discord", clearCartButton: "Clear All",
             plusFeatures: "<li>Special chat prefix</li><li>Access to /fly command</li>",
             superFeatures: "<li>All PLUS Rank perks</li><li>Access to pet functions</li><li>Access to exclusive worlds</li>",
             deluxeFeatures: "<li>All SUPER Rank perks</li><li>Nickname changing feature</li><li>Particle effects</li>",
@@ -142,6 +142,11 @@ document.addEventListener('DOMContentLoaded', () => {
         allElements.languageButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
         generateProductCards();
         updateCartUI();
+
+        const activeCategoryLink = document.querySelector('.category-link.active');
+        if (activeCategoryLink) {
+            showCategory(activeCategoryLink.dataset.category);
+        }
     };
 
     const updateUIAfterLogin = (username) => {
@@ -277,7 +282,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const cartItems = document.querySelectorAll('.cart-item');
         if (cartItems.length === 0) return;
 
-        // すべてのアイテムにアニメーションを適用
         cartItems.forEach((item, index) => {
             item.style.transitionDelay = `${index * 50}ms`;
             item.classList.add('removing');
@@ -285,14 +289,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const lastItem = cartItems[cartItems.length - 1];
         
-        // 最後のアイテムのアニメーションが完了したら、
-        // UIを更新して「カートは空です」メッセージを表示
         lastItem.addEventListener('animationend', () => {
             updateCartUI(); 
         }, { once: true });
         
-        // ★修正点: アニメーションの完了を待たずに、データを即座にクリアして保存
-        // これにより、アニメーション中にページを離れてもカートは空になる
         cart = [];
         saveState();
     };
@@ -373,6 +373,17 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const showCategory = (categoryToShow) => {
+        const titleElement = document.getElementById('category-title');
+        const categoryKey = 'category' + categoryToShow.charAt(0).toUpperCase() + categoryToShow.slice(1).replace('-','');
+        const translatedTitle = translations[currentLang][categoryKey] || categoryToShow;
+
+        if (titleElement) {
+            titleElement.textContent = translatedTitle;
+            titleElement.style.animation = 'none';
+            void titleElement.offsetWidth;
+            titleElement.style.animation = 'fadeInUp 0.6s ease-out';
+        }
+
         allElements.categoryContents.forEach(content => content.classList.remove('active'));
         const activeContent = document.getElementById(`${categoryToShow}-content`);
         if(activeContent) activeContent.classList.add('active');
