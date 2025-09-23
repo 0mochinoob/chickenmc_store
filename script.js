@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             loginErrorNotFound: (id) => `「${id}」というIDは見つかりませんでした。`, loginErrorWrongCase: (id, correctId) => `入力された名前「${id}」は現在使用されていません。正しい名前は「${correctId}」です。`, loginEmptyError: "Minecraft IDを入力してください", loginInProgress: "アカウントを確認中...", logoutSuccess: (user) => `${user} からログアウトしました`, loginRequired: "購入するにはログインしてください", cartAddSuccess: (name) => `${name} をカートに追加しました`, cartItemExists: (name) => `${name} は既にカートにあります。`, cartRankExists: "ランクは1つしか購入できません。", cartBoosterExists: "ブースターは1つしか購入できません。", checkoutSuccess: "ご購入ありがとうございます！", cartEmpty: "カートは空です", cartEmptyMessage: '<p style="text-align: center; opacity: 0.7; margin-top: 40px;">カートは空です</p>',
             "colorBlueberry": "ブルーベリー", "colorRaspberry": "ラズベリー", "colorStrawberry": "ストロベリー", "colorPeach": "ピーチ", "colorMango": "マンゴー", "colorBanana": "バナナ", "colorMelon": "メロン", "colorBilberry": "ビルベリー", "colorGrape": "グレープ", "colorPink": "ピンク", "colorTeal": "ティール", "colorUltraMarine": "ウルトラマリン", "colorLavender": "ラベンダー", "colorSage": "セージ", "colorMistBlue": "ミストブルー", "colorMint": "ミント", "colorCoral": "コーラル", "colorLatte": "ラテ",
             "gradSunrise": "サンライズ", "gradOcean": "オーシャン", "gradForest": "フォレスト", "gradTwilight": "トワイライト", "gradMeadow": "メドウ", "gradCoralReef": "コーラルリーフ", "gradLavenderBliss": "ラベンダーブリス", "gradWatermelon": "ウォーターメロン", "gradAurora": "オーロラ", "gradSunset": "サンセット", "gradMojito": "モヒート", "gradRoyal": "ロイヤル",
-            "badgeSkullBadge": "スカルバッジ", "badgeCreeperBadge": "クリーパーバッジ", "badgeDiamondSwordBadge": "ダイヤ剣バッジ", "badgePickaxeBadge": "ピッケルバッジ", "badgeEnderPearlBadge": "エンパ―バッジ", "badgeGoldenAppleBadge": "金リンゴバッジ", "badgeTNTBadge": "TNTバッジ", "badgeHeartBadge": "ハートバッジ"
+            "badgeKarasuBadge": "からす", "badgeHiyokoBadge": "ひよこ", "badgeAhiruBadge": "あひる", "badgeChickenBadge": "ちきん", "badgeHinotoriBadge": "ひのとり", "badgeRaichoBadge": "雷鳥"
         },
         en: {
             settingsTitle: "Settings", languageLabel: "Language", storeTitle: "CHICKENMC STORE", loginButton: "Login", logoutButton: "Logout", loginTitle: "Login with Minecraft ID", loginPlaceholder: "Enter your ID...", loginNotice: "*This is a demo. No password is required.", addToCart: "Add to Cart", cartTitle: "Shopping Cart", totalLabel: "Total:", checkoutButton: "Checkout", monthlySub: "/month", categoriesTitle: "Categories", categoryRanks: "Ranks", categoryStandardColors: "Standard Colors", categoryGradationColors: "Gradation Colors", categoryBadges: "Badges", categoryBoost: "Boost", categoryServerBooster: "Server Booster", joinDiscord: "Join Discord", clearCartButton: "Clear All",
@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
             ultimateFeatures: "<li>All PREMIUM Rank perks</li><li>Ability to fly in all games</li><li>Use of custom skins</li>",
             boosterFeatures: "<li>Boosts the entire server's XP gain for 30 days.</li>",
             serverBoosterFeatures: "<li>This is a type of rank, but it can only be purchased via Discord.</li><li>Please check our Discord server for details.</li>",
-            loginErrorNotFound: (id) => `The ID "${id}" could not be found.`, loginErrorWrongCase: (id, correctId) => `The name "${id}" is not in use. The correct name is "${correctId}".`, loginEmptyError: "Please enter a Minecraft ID", loginInProgress: "Verifying account...", logoutSuccess: (user) => `Logged out from ${user}`, loginRequired: "Please log in to purchase", cartAddSuccess: (name) => `Added ${name} to cart`, cartItemExists: (name) => `${name} is already in the cart.`, cartRankExists: "You can only purchase one rank at a time.", cartBoosterExists: "You can only purchase one booster at a time.", checkoutSuccess: "Thank you for your purchase!", cartEmpty: "Your cart is empty", cartEmptyMessage: '<p style="text-align: center; opacity: 0.7; margin-top: 40px;">The cart is empty</p>'
+            loginErrorNotFound: (id) => `The ID "${id}" could not be found.`, loginErrorWrongCase: (id, correctId) => `The name "${id}" is not in use. The correct name is "${correctId}".`, loginEmptyError: "Please enter a Minecraft ID", loginInProgress: "Verifying account...", logoutSuccess: (user) => `Logged out from ${user}`, loginRequired: "Please log in to purchase", cartAddSuccess: (name) => `Added ${name} to cart`, cartItemExists: (name) => `${name} is already in the cart.`, cartRankExists: "You can only purchase one rank at a time.", cartBoosterExists: "You can only purchase one booster at a time.", checkoutSuccess: "Thank you for your purchase!", cartEmpty: "Your cart is empty", cartEmptyMessage: '<p style="text-align: center; opacity: 0.7; margin-top: 40px;">The cart is empty</p>',
+            "badgeKarasuBadge": "Karasu Badge", "badgeHiyokoBadge": "Hiyoko Badge", "badgeAhiruBadge": "Ahiru Badge", "badgeChickenBadge": "Chicken Badge", "badgeHinotoriBadge": "Hinotori Badge", "badgeRaichoBadge": "Raicho Badge"
         }
     };
 
@@ -84,10 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
             { id: 'Mojito', defaultName: 'Mojito', start: '#98FF98', end: '#fff2a8' }, { id: 'Royal', defaultName: 'Royal', start: '#540192', end: '#7b97f5' }
         ],
         badges: [
-            { id: 'SkullBadge', defaultName: 'Skull Badge', img: 'badge1.png' }, { id: 'CreeperBadge', defaultName: 'Creeper Badge', img: 'badge2.png' }, 
-            { id: 'DiamondSwordBadge', defaultName: 'Diamond Sword Badge', img: 'badge3.png' }, { id: 'PickaxeBadge', defaultName: 'Pickaxe Badge', img: 'badge4.png' }, 
-            { id: 'EnderPearlBadge', defaultName: 'Ender Pearl Badge', img: 'badge5.png' }, { id: 'GoldenAppleBadge', defaultName: 'Golden Apple Badge', img: 'badge6.png' }, 
-            { id: 'TNTBadge', defaultName: 'TNT Badge', img: 'badge7.png' }, { id: 'HeartBadge', defaultName: 'Heart Badge', img: 'badge8.png' }
+            { id: 'KarasuBadge', defaultName: 'Karasu Badge', img: 'karasu.png' },
+            { id: 'HiyokoBadge', defaultName: 'Hiyoko Badge', img: 'hiyoko.png' },
+            { id: 'AhiruBadge', defaultName: 'Ahiru Badge', img: 'ahiru.png' },
+            { id: 'ChickenBadge', defaultName: 'Chicken Badge', img: 'chicken.png' },
+            { id: 'HinotoriBadge', defaultName: 'Hinotori Badge', img: 'hinotori.png' },
+            { id: 'RaichoBadge', defaultName: 'Raicho Badge', img: 'raicho.png' }
         ]
     };
 
