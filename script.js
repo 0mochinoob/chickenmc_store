@@ -497,8 +497,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             allElements.menuToggle.addEventListener('click', toggleDesktopCategorySidebar);
             allElements.cartToggleButton.addEventListener('click', () => {
-                allElements.sideMenu.classList.add('open');
                 animateCartView();
+                setTimeout(() => {
+                    allElements.sideMenu.classList.add('open');
+                }, 1000);
             });
             allElements.closeCartButton.addEventListener('click', () => allElements.sideMenu.classList.remove('open'));
         }
