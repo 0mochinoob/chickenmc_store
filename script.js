@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const translations = {
         ja: {
-            settingsTitle: "設定", languageLabel: "言語", storeTitle: "CHICKENMC STORE", loginButton: "ログイン", logoutButton: "ログアウト", loginTitle: "Minecraft IDでログイン", loginPlaceholder: "あなたのIDを入力...", loginNotice: "※これはデモです。パスワードは不要です。", addToCart: "カートに入れる", cartTitle: "ショッピングカート", totalLabel: "合計:", checkoutButton: "チェックアウト", monthlySub: "/月", categoriesTitle: "カテゴリー", categoryRanks: "ランク", categoryStandardColors: "スタンダードカラー", categoryGradationColors: "グラデーションカラー", categoryBadges: "バッジ", categoryBoost: "ブースト", categoryServerBooster: "サーバーブースター", joinDiscord: "Discordに参加", clearCartButton: "すべて削除",
+            settingsTitle: "設定", languageLabel: "言語", storeTitle: "CHICKENMC STORE", loginButton: "ログイン", logoutButton: "ログアウト", loginTitle: "Minecraft IDでログイン", loginPlaceholder: "あなたのIDを入力...", loginNotice: "", addToCart: "カートに入れる", cartTitle: "ショッピングカート", totalLabel: "合計:", checkoutButton: "チェックアウト", monthlySub: "/月", categoriesTitle: "カテゴリー", categoryRanks: "ランク", categoryStandardColors: "スタンダードカラー", categoryGradationColors: "グラデーションカラー", categoryBadges: "バッジ", categoryBooster: "ブースト", categoryServerBooster: "サーバーブースト", joinDiscord: "Discordに参加", clearCartButton: "すべて削除",
             plusFeatures: "<li>特別なチャットプレフィックス</li><li>/fly コマンドへのアクセス権</li>",
             superFeatures: "<li>PLUSランクの全特典</li><li>ペット機能の利用</li><li>限定ワールドへのアクセス</li>",
             deluxeFeatures: "<li>SUPERランクの全特典</li><li>ニックネーム変更機能</li><li>パーティクルエフェクト</li>",
@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
             ultimateFeatures: "<li>PREMIUMランクの全特典</li><li>全ゲームでの飛行能力</li><li>カスタムスキンの利用</li>",
             boosterFeatures: "<li>30日間、サーバー全体のXP獲得量をブーストします。</li>",
             serverBoosterFeatures: "<li>ランクの一種ですが、購入はDiscordからのみ可能です。</li><li>詳細はDiscordサーバーでご確認ください。</li>",
-            loginErrorNotFound: (id) => `「${id}」というIDは見つかりませんでした。`, loginErrorWrongCase: (id, correctId) => `入力された名前「${id}」は現在使用されていません。正しい名前は「${correctId}」です。`, loginEmptyError: "Minecraft IDを入力してください", loginInProgress: "アカウントを確認中...", logoutSuccess: (user) => `${user} からログアウトしました`, loginRequired: "購入するにはログインしてください", cartAddSuccess: (name) => `${name} をカートに追加しました`, cartItemExists: (name) => `${name} は既にカートにあります。`, cartRankExists: "ランクは1つしか購入できません。", cartBoosterExists: "ブースターは1つしか購入できません。", checkoutSuccess: "ご購入ありがとうございます！", cartEmpty: "カートは空です", cartEmptyMessage: '<p style="text-align: center; opacity: 0.7; margin-top: 40px;">カートは空です</p>',
+            loginErrorNotFound: (id) => `「${id}」というIDは見つかりませんでした。(名前を変更したばかりの場合は、少し時間をおいてからお試しください)`, loginErrorWrongCase: (id, correctId) => `入力された名前「${id}」は現在使用されていません。正しい名前は「${correctId}」です。`, loginEmptyError: "Minecraft IDを入力してください", loginInProgress: "アカウントを確認中...", logoutSuccess: (user) => `${user} からログアウトしました`, loginRequired: "購入するにはログインしてください", cartAddSuccess: (name) => `${name} をカートに追加しました`, cartItemExists: (name) => `${name} は既にカートにあります。`, cartRankExists: "ランクは1つしか購入できません。", cartBoosterExists: "ブースターは1つしか購入できません。", checkoutSuccess: "ご購入ありがとうございます！", cartEmpty: "カートは空です", cartEmptyMessage: '<p style="text-align: center; opacity: 0.7; margin-top: 40px;">カートは空です</p>',
             "colorBlueberry": "ブルーベリー", "colorRaspberry": "ラズベリー", "colorStrawberry": "ストロベリー", "colorPeach": "ピーチ", "colorMango": "マンゴー", "colorBanana": "バナナ", "colorMelon": "メロン", "colorBilberry": "ビルベリー", "colorGrape": "グレープ", "colorPink": "ピンク", "colorTeal": "ティール", "colorUltraMarine": "ウルトラマリン", "colorLavender": "ラベンダー", "colorSage": "セージ", "colorMistBlue": "ミストブルー", "colorMint": "ミント", "colorCoral": "コーラル", "colorLatte": "ラテ",
             "gradSunrise": "サンライズ", "gradOcean": "オーシャン", "gradForest": "フォレスト", "gradTwilight": "トワイライト", "gradMeadow": "メドウ", "gradCoralReef": "コーラルリーフ", "gradLavenderBliss": "ラベンダーブリス", "gradWatermelon": "ウォーターメロン", "gradAurora": "オーロラ", "gradSunset": "サンセット", "gradMojito": "モヒート", "gradRoyal": "ロイヤル",
             "badgeKarasuBadge": "からす", "badgeHiyokoBadge": "ひよこ", "badgeAhiruBadge": "あひる", "badgeChickenBadge": "ちきん", "badgeHinotoriBadge": "ひのとり", "badgeRaichoBadge": "雷鳥"
         },
         en: {
-            settingsTitle: "Settings", languageLabel: "Language", storeTitle: "CHICKENMC STORE", loginButton: "Login", logoutButton: "Logout", loginTitle: "Login with Minecraft ID", loginPlaceholder: "Enter your ID...", loginNotice: "*This is a demo. No password is required.", addToCart: "Add to Cart", cartTitle: "Shopping Cart", totalLabel: "Total:", checkoutButton: "Checkout", monthlySub: "/month", categoriesTitle: "Categories", categoryRanks: "Ranks", categoryStandardColors: "Standard Colors", categoryGradationColors: "Gradation Colors", categoryBadges: "Badges", categoryBoost: "Boost", categoryServerBooster: "Server Booster", joinDiscord: "Join Discord", clearCartButton: "Clear All",
+            settingsTitle: "Settings", languageLabel: "Language", storeTitle: "CHICKENMC STORE", loginButton: "Login", logoutButton: "Logout", loginTitle: "Login with Minecraft ID", loginPlaceholder: "Enter your ID...", loginNotice: "", addToCart: "Add to Cart", cartTitle: "Shopping Cart", totalLabel: "Total:", checkoutButton: "Checkout", monthlySub: "/month", categoriesTitle: "Categories", categoryRanks: "Ranks", categoryStandardColors: "Standard Colors", categoryGradationColors: "Gradation Colors", categoryBadges: "Badges", categoryBooster: "Boost", categoryServerBooster: "Server Boost", joinDiscord: "Join Discord", clearCartButton: "Clear All",
             plusFeatures: "<li>Special chat prefix</li><li>Access to /fly command</li>",
             superFeatures: "<li>All PLUS Rank perks</li><li>Access to pet functions</li><li>Access to exclusive worlds</li>",
             deluxeFeatures: "<li>All SUPER Rank perks</li><li>Nickname changing feature</li><li>Particle effects</li>",
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ultimateFeatures: "<li>All PREMIUM Rank perks</li><li>Ability to fly in all games</li><li>Use of custom skins</li>",
             boosterFeatures: "<li>Boosts the entire server's XP gain for 30 days.</li>",
             serverBoosterFeatures: "<li>This is a type of rank, but it can only be purchased via Discord.</li><li>Please check our Discord server for details.</li>",
-            loginErrorNotFound: (id) => `The ID "${id}" could not be found.`, loginErrorWrongCase: (id, correctId) => `The name "${id}" is not in use. The correct name is "${correctId}".`, loginEmptyError: "Please enter a Minecraft ID", loginInProgress: "Verifying account...", logoutSuccess: (user) => `Logged out from ${user}`, loginRequired: "Please log in to purchase", cartAddSuccess: (name) => `Added ${name} to cart`, cartItemExists: (name) => `${name} is already in the cart.`, cartRankExists: "You can only purchase one rank at a time.", cartBoosterExists: "You can only purchase one booster at a time.", checkoutSuccess: "Thank you for your purchase!", cartEmpty: "Your cart is empty", cartEmptyMessage: '<p style="text-align: center; opacity: 0.7; margin-top: 40px;">The cart is empty</p>',
+            loginErrorNotFound: (id) => `The ID "${id}" could not be found. (If you recently changed your name, please try again after a few minutes)`, loginErrorWrongCase: (id, correctId) => `The name "${id}" is not in use. The correct name is "${correctId}".`, loginEmptyError: "Please enter a Minecraft ID", loginInProgress: "Verifying account...", logoutSuccess: (user) => `Logged out from ${user}`, loginRequired: "Please log in to purchase", cartAddSuccess: (name) => `Added ${name} to cart`, cartItemExists: (name) => `${name} is already in the cart.`, cartRankExists: "You can only purchase one rank at a time.", cartBoosterExists: "You can only purchase one booster at a time.", checkoutSuccess: "Thank you for your purchase!", cartEmpty: "Your cart is empty", cartEmptyMessage: '<p style="text-align: center; opacity: 0.7; margin-top: 40px;">The cart is empty</p>',
             "badgeKarasuBadge": "Crow",
             "badgeHiyokoBadge": "Chick",
             "badgeAhiruBadge": "Duck",
@@ -71,31 +71,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const productData = {
         standardColors: [
-            { id: 'Blueberry', defaultName: 'Blueberry', hex: '#9b8fcf' }, { id: 'Raspberry', defaultName: 'Raspberry', hex: '#e69ab3' },
-            { id: 'Strawberry', defaultName: 'Strawberry', hex: '#f9a6a6' }, { id: 'Peach', defaultName: 'Peach', hex: '#f5c5d5' },
-            { id: 'Mango', defaultName: 'Mango', hex: '#ffd6a5' }, { id: 'Banana', defaultName: 'Banana', hex: '#fff2a8' },
-            { id: 'Melon', defaultName: 'Melon', hex: '#b5e8a8' }, { id: 'Bilberry', defaultName: 'Bilberry', hex: '#4682B4' },
-            { id: 'Grape', defaultName: 'Grape', hex: '#d7a8f0' }, { id: 'Pink', defaultName: 'Pink', hex: '#f3b9cf' },
-            { id: 'Teal', defaultName: 'Teal', hex: '#8ccbcb' }, { id: 'UltraMarine', defaultName: 'UltraMarine', hex: '#7b97f5' },
-            { id: 'Lavender', defaultName: 'Lavender', hex: '#c8b2e1' }, { id: 'Sage', defaultName: 'Sage', hex: '#a3b59f' },
-            { id: 'MistBlue', defaultName: 'Mist Blue', hex: '#a7c7e6' }, { id: 'Mint', defaultName: 'Mint', hex: '#98FF98' },
-            { id: 'Coral', defaultName: 'Coral', hex: '#FF7F50' }, { id: 'Latte', defaultName: 'Latte', hex: '#C5A687' }
+            { id: 'Blueberry', defaultName: 'Blueberry', hex: '#9b8fcf', tebexId: '1000001' }, 
+            { id: 'Raspberry', defaultName: 'Raspberry', hex: '#e69ab3', tebexId: '1000002' },
+            { id: 'Strawberry', defaultName: 'Strawberry', hex: '#f9a6a6', tebexId: '1000003' },
+            { id: 'Peach', defaultName: 'Peach', hex: '#f5c5d5', tebexId: '1000004' },
+            { id: 'Mango', defaultName: 'Mango', hex: '#ffd6a5', tebexId: '1000005' },
+            { id: 'Banana', defaultName: 'Banana', hex: '#fff2a8', tebexId: '1000006' },
+            { id: 'Melon', defaultName: 'Melon', hex: '#b5e8a8', tebexId: '1000007' },
+            { id: 'Bilberry', defaultName: 'Bilberry', hex: '#4682B4', tebexId: '1000008' },
+            { id: 'Grape', defaultName: 'Grape', hex: '#d7a8f0', tebexId: '1000009' },
+            { id: 'Pink', defaultName: 'Pink', hex: '#f3b9cf', tebexId: '1000010' },
+            { id: 'Teal', defaultName: 'Teal', hex: '#8ccbcb', tebexId: '1000011' },
+            { id: 'UltraMarine', defaultName: 'UltraMarine', hex: '#7b97f5', tebexId: '1000012' },
+            { id: 'Lavender', defaultName: 'Lavender', hex: '#c8b2e1', tebexId: '1000013' },
+            { id: 'Sage', defaultName: 'Sage', hex: '#a3b59f', tebexId: '1000014' },
+            { id: 'MistBlue', defaultName: 'Mist Blue', hex: '#a7c7e6', tebexId: '1000015' },
+            { id: 'Mint', defaultName: 'Mint', hex: '#98FF98', tebexId: '1000016' },
+            { id: 'Coral', defaultName: 'Coral', hex: '#FF7F50', tebexId: '1000017' },
+            { id: 'Latte', defaultName: 'Latte', hex: '#C5A687', tebexId: '1000018' }
         ],
         gradationColors: [
-            { id: 'Sunrise', defaultName: 'Sunrise', start: '#F9A6A6', end: '#FFD6A5' }, { id: 'Ocean', defaultName: 'Ocean', start: '#8CCBCB', end: '#7B97F5' },
-            { id: 'Forest', defaultName: 'Forest', start: '#B5E8A8', end: '#A3B59F' }, { id: 'Twilight', defaultName: 'Twilight', start: '#C8B2E1', end: '#E69AB3' },
-            { id: 'Meadow', defaultName: 'Meadow', start: '#FFF2A8', end: '#B5E8A8' }, { id: 'CoralReef', defaultName: 'Coral Reef', start: '#FF7F50', end: '#F3B9CF' },
-            { id: 'LavenderBliss', defaultName: 'Lavender Bliss', start: '#d7a8f0', end: '#c8b2e1' }, { id: 'Watermelon', defaultName: 'Watermelon', start: '#f9a6a6', end: '#b5e8a8' },
-            { id: 'Aurora', defaultName: 'Aurora', start: '#8ccbcb', end: '#d7a8f0' }, { id: 'Sunset', defaultName: 'Sunset', start: '#ffd6a5', end: '#ff7f50' },
-            { id: 'Mojito', defaultName: 'Mojito', start: '#98FF98', end: '#fff2a8' }, { id: 'Royal', defaultName: 'Royal', start: '#540192', end: '#7b97f5' }
+            { id: 'Sunrise', defaultName: 'Sunrise', start: '#F9A6A6', end: '#FFD6A5', tebexId: '2000001' },
+            { id: 'Ocean', defaultName: 'Ocean', start: '#8CCBCB', end: '#7B97F5', tebexId: '2000002' },
+            { id: 'Forest', defaultName: 'Forest', start: '#B5E8A8', end: '#A3B59F', tebexId: '2000003' },
+            { id: 'Twilight', defaultName: 'Twilight', start: '#C8B2E1', end: '#E69AB3', tebexId: '2000004' },
+            { id: 'Meadow', defaultName: 'Meadow', start: '#FFF2A8', end: '#B5E8A8', tebexId: '2000005' },
+            { id: 'CoralReef', defaultName: 'Coral Reef', start: '#FF7F50', end: '#F3B9CF', tebexId: '2000006' },
+            { id: 'LavenderBliss', defaultName: 'Lavender Bliss', start: '#d7a8f0', end: '#c8b2e1', tebexId: '2000007' },
+            { id: 'Watermelon', defaultName: 'Watermelon', start: '#f9a6a6', end: '#b5e8a8', tebexId: '2000008' },
+            { id: 'Aurora', defaultName: 'Aurora', start: '#8ccbcb', end: '#d7a8f0', tebexId: '2000009' },
+            { id: 'Sunset', defaultName: 'Sunset', start: '#ffd6a5', end: '#ff7f50', tebexId: '2000010' },
+            { id: 'Mojito', defaultName: 'Mojito', start: '#98FF98', end: '#fff2a8', tebexId: '2000011' },
+            { id: 'Royal', defaultName: 'Royal', start: '#540192', end: '#7b97f5', tebexId: '2000012' }
         ],
         badges: [
-            { id: 'KarasuBadge', defaultName: 'Crow', img: 'karasu.png' },
-            { id: 'HiyokoBadge', defaultName: 'Chick', img: 'hiyoko.png' },
-            { id: 'AhiruBadge', defaultName: 'Duck', img: 'ahiru.png' },
-            { id: 'ChickenBadge', defaultName: 'Chicken', img: 'chicken.png' },
-            { id: 'HinotoriBadge', defaultName: 'Fire Bird', img: 'hinotori.png' },
-            { id: 'RaichoBadge', defaultName: 'Thunder Bird', img: 'raicho.png' }
+            { id: 'KarasuBadge', defaultName: 'Crow', img: 'karasu.png', tebexId: '3000001' },
+            { id: 'HiyokoBadge', defaultName: 'Chick', img: 'hiyoko.png', tebexId: '3000002' },
+            { id: 'AhiruBadge', defaultName: 'Duck', img: 'ahiru.png', tebexId: '3000003' },
+            { id: 'ChickenBadge', defaultName: 'Chicken', img: 'chicken.png', tebexId: '3000004' },
+            { id: 'HinotoriBadge', defaultName: 'Fire Bird', img: 'hinotori.png', tebexId: '3000005' },
+            { id: 'RaichoBadge', defaultName: 'Thunder Bird', img: 'raicho.png', tebexId: '3000006' }
         ]
     };
 
@@ -111,21 +126,21 @@ document.addEventListener('DOMContentLoaded', () => {
         stdColorsContainer.innerHTML = '';
         productData.standardColors.forEach(color => {
             const name = getTranslatedName('color', color);
-            stdColorsContainer.innerHTML += `<div class="product-card"><div class="color-preview" style="background-color: ${color.hex};"></div><h3>${name}</h3><p class="price">$3.99</p><button class="add-btn glass-btn" data-id="${color.id}" data-name="${name}" data-price="3.99" data-category="colors" disabled data-key="addToCart"></button></div>`;
+            stdColorsContainer.innerHTML += `<div class="product-card"><div class="color-preview" style="background-color: ${color.hex};"></div><h3>${name}</h3><p class="price">$3.99</p><button class="add-btn glass-btn" data-id="${color.id}" data-name="${name}" data-price="3.99" data-category="colors" data-tebex-id="${color.tebexId}" disabled data-key="addToCart"></button></div>`;
         });
         
         const gradColorsContainer = document.getElementById('gradation-colors-content');
         gradColorsContainer.innerHTML = '';
         productData.gradationColors.forEach(color => {
             const name = getTranslatedName('grad', color);
-            gradColorsContainer.innerHTML += `<div class="product-card"><div class="color-preview gradation-preview" style="background: linear-gradient(45deg, ${color.start}, ${color.end});"></div><h3>${name}</h3><p class="price">$5.99</p><button class="add-btn glass-btn" data-id="${color.id}" data-name="${name}" data-price="5.99" data-category="colors" disabled data-key="addToCart"></button></div>`;
+            gradColorsContainer.innerHTML += `<div class="product-card"><div class="color-preview gradation-preview" style="background: linear-gradient(45deg, ${color.start}, ${color.end});"></div><h3>${name}</h3><p class="price">$5.99</p><button class="add-btn glass-btn" data-id="${color.id}" data-name="${name}" data-price="5.99" data-category="colors" data-tebex-id="${color.tebexId}" disabled data-key="addToCart"></button></div>`;
         });
 
         const badgesContainer = document.getElementById('badges-content');
         badgesContainer.innerHTML = '';
         productData.badges.forEach(badge => {
             const name = getTranslatedName('badge', badge);
-            badgesContainer.innerHTML += `<div class="product-card"><img src="${badge.img}" alt="${name}" class="badge-preview"><h3>${name}</h3><p class="price">$7.99</p><button class="add-btn glass-btn" data-id="${badge.id}" data-name="${name}" data-price="7.99" data-category="badges" disabled data-key="addToCart"></button></div>`;
+            badgesContainer.innerHTML += `<div class="product-card"><img src="${badge.img}" alt="${name}" class="badge-preview"><h3>${name}</h3><p class="price">$7.99</p><button class="add-btn glass-btn" data-id="${badge.id}" data-name="${name}" data-price="7.99" data-category="badges" data-tebex-id="${badge.tebexId}" disabled data-key="addToCart"></button></div>`;
         });
 
         setLanguageText();
@@ -139,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const lang = currentLang;
         document.querySelectorAll('[data-key]').forEach(el => {
             const key = el.dataset.key;
-            if (translations[lang][key]) {
+            if (translations[lang][key] !== undefined) {
                 if (el.tagName === 'UL') el.innerHTML = translations[lang][key]; else el.textContent = translations[lang][key];
             }
         });
@@ -158,18 +173,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const activeCategoryLink = document.querySelector('.category-link.active');
         if (activeCategoryLink) {
-            showCategory(activeCategoryLink.dataset.category);
+            showCategory(activeCategoryLink.dataset.category, activeCategoryLink.dataset.key);
         }
     };
 
     const updateUIAfterLogin = (username) => {
         allElements.playerHead.src = `https://cravatar.eu/avatar/${username}/40.png`;
         allElements.playerName.textContent = username;
-        allElements.userInfoDisplay.style.display = 'flex';
-        allElements.loginButton.style.display = 'none';
-        allElements.logoutButton.style.display = 'inline-flex';
+        allElements.body.classList.add('logged-in');
         allElements.loginOverlay.classList.remove('open');
         document.querySelectorAll('.add-btn').forEach(btn => btn.disabled = false);
+        updateCartUI(); 
     };
 
     const updateCartUI = () => {
@@ -193,6 +207,18 @@ document.addEventListener('DOMContentLoaded', () => {
         allElements.cartItemCountMobile.textContent = count;
         allElements.cartItemCountDesktop.classList.toggle('visible', count > 0);
         allElements.cartItemCountMobile.classList.toggle('visible', count > 0);
+
+        const tebexStoreUrl = "https://your-tebex-store.com";
+        let checkoutUrl = `${tebexStoreUrl}`;
+
+        if (cart.length > 0 && loggedInUser) {
+            const packageIds = cart.map(item => item.tebexId).join(',');
+            checkoutUrl = `${tebexStoreUrl}/checkout/packages/add/${packageIds}/?username=${loggedInUser}`;
+        }
+
+        allElements.checkoutButtons.forEach(btn => {
+            btn.href = checkoutUrl;
+        });
     };
 
     const showNotification = (message, targetElement, type = 'info') => {
@@ -238,9 +264,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (loggedInUser) {
             updateUIAfterLogin(loggedInUser);
+        } else {
+            updateCartUI();
         }
         
-        showCategory('ranks');
+        showCategory('ranks', 'categoryRanks');
     };
 
     const animateAddToCart = (button) => {
@@ -265,14 +293,14 @@ document.addEventListener('DOMContentLoaded', () => {
         flyingItem.addEventListener('transitionend', () => flyingItem.remove());
     };
 
-    const addItemToCart = (id, name, price, category, targetButton) => {
+    const addItemToCart = (id, name, price, category, tebexId, targetButton) => {
         const langData = translations[currentLang];
         if (cart.find(item => item.id === id)) { return showNotification(langData.cartItemExists(name), targetButton, 'error'); }
         if (category === 'ranks' && cart.some(item => item.category === 'ranks')) { return showNotification(langData.cartRankExists, targetButton, 'error'); }
         if (category === 'booster' && cart.some(item => item.category === 'booster')) { return showNotification(langData.cartBoosterExists, targetButton, 'error'); }
         animateAddToCart(targetButton);
         setTimeout(() => {
-            cart.push({ id, name, price, category });
+            cart.push({ id, name, price, category, tebexId });
             updateCartUI();
             saveState();
             if (isMobile()) openSidebarAndShowTab('cart'); else {
@@ -308,37 +336,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const handleLogin = async () => {
         const userId = allElements.minecraftIdInput.value.trim();
         const langData = translations[currentLang];
+
         if (!userId) { return showNotification(langData.loginEmptyError, allElements.minecraftIdInput, 'error'); }
+        
         allElements.loginSubmitButton.style.display = 'none';
         allElements.loginSpinner.style.display = 'block';
         allElements.loginMessage.textContent = langData.loginInProgress;
         await new Promise(resolve => setTimeout(resolve, 1500));
+
         try {
-            const response = await fetch(`https://api.ashcon.app/mojang/v2/user/${userId}`);
-            if (!response.ok) throw new Error(langData.loginErrorNotFound(userId));
+            const response = await fetch(`https://playerdb.co/api/player/minecraft/${userId}`);
+            
+            if (!response.ok) {
+                throw new Error(langData.loginErrorNotFound(userId));
+            }
+
             const accountData = await response.json();
-            if (accountData.username.toLowerCase() !== userId.toLowerCase()) { throw new Error(langData.loginErrorWrongCase(userId, accountData.username)); }
-            loggedInUser = accountData.username;
-            updateUIAfterLogin(loggedInUser);
-            saveState();
+
+            if (accountData.code === "player.found" && accountData.data.player) {
+                loggedInUser = accountData.data.player.username;
+                updateUIAfterLogin(loggedInUser);
+                saveState();
+            } else {
+                 throw new Error(langData.loginErrorNotFound(userId));
+            }
         } catch (error) {
             showNotification(error.message, allElements.loginSubmitButton, 'error');
         } finally {
             allElements.loginSubmitButton.style.display = 'block';
             allElements.loginSpinner.style.display = 'none';
-            allElements.loginMessage.textContent = langData.loginNotice;
+            setLanguageText();
         }
     };
 
     const handleLogout = () => {
         showNotification(translations[currentLang].logoutSuccess(loggedInUser), allElements.logoutButton);
-        loggedInUser = null; cart = []; updateCartUI();
-        allElements.userInfoDisplay.style.display = 'none';
-        allElements.logoutButton.style.display = 'none';
-        allElements.loginButton.style.display = 'inline-flex';
+        loggedInUser = null; 
+        cart = []; 
+        allElements.body.classList.remove('logged-in');
         allElements.playerHead.src = "";
         document.querySelectorAll('.add-btn').forEach(btn => btn.disabled = true);
         saveState();
+        updateCartUI();
     };
 
     const animateCategoryLinks = () => {
@@ -380,9 +419,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    const showCategory = (categoryToShow) => {
+    const showCategory = (categoryToShow, categoryKey) => {
         const titleElement = document.getElementById('category-title');
-        const categoryKey = 'category' + categoryToShow.charAt(0).toUpperCase() + categoryToShow.slice(1).replace('-','');
         const translatedTitle = translations[currentLang][categoryKey] || categoryToShow;
 
         if (titleElement) {
@@ -456,10 +494,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 link.classList.add('clicked');
                 link.addEventListener('animationend', () => link.classList.remove('clicked'), { once: true });
-                showCategory(link.dataset.category);
+                showCategory(link.dataset.category, link.dataset.key);
             });
         });
-        document.querySelectorAll('.checkout-btn').forEach(btn => btn.addEventListener('click', (e) => { if (cart.length === 0) { e.preventDefault(); showNotification(translations[currentLang].cartEmpty, e.currentTarget, 'error'); } }));
+        document.querySelectorAll('.checkout-btn').forEach(btn => btn.addEventListener('click', (e) => { 
+            if (cart.length === 0 || !loggedInUser) { 
+                e.preventDefault(); 
+                const msg = loggedInUser ? translations[currentLang].cartEmpty : translations[currentLang].loginRequired;
+                showNotification(msg, e.currentTarget, 'error'); 
+            } 
+        }));
         
         allElements.mainContent.addEventListener('click', (event) => {
             const button = event.target.closest('.add-btn');
@@ -469,9 +513,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     allElements.loginOverlay.classList.add('open');
                     return;
                 }
-                const { id, name, price, category } = button.dataset;
-                if (id && name && price && category) {
-                    addItemToCart(id, name, parseFloat(price), category, button);
+                const { id, name, price, category, tebexId } = button.dataset;
+                if (id && name && price && category && tebexId) {
+                    addItemToCart(id, name, parseFloat(price), category, tebexId, button);
                 }
             }
         });
